@@ -25,6 +25,11 @@ form {
     margin-bottom: 1rem;
 }
 
+form input {
+    padding: 8px 12px;
+    width: 250px;
+}
+
 body {
     margin: 10px;
     font-family: Arial, sans-serif;
@@ -32,7 +37,7 @@ body {
 }
 
 header {
-    background-color :rgb(255, 0, 0);
+    background-color: rgb(255, 0, 0);
     padding: 1.5rem;
     text-align: center;
 }
@@ -40,6 +45,49 @@ header {
 h1 {
     margin: 0;
     color: white;
+}
+
+/* Tampilan Komponen Pencarian Mahasiswa */
+.mhs-container {
+    max-width: 900px;
+    margin: 0 auto 2rem auto;
+    display: flex;
+    gap: 1rem;
+}
+
+.mhs-box {
+    flex: 1;
+    background: #fff;
+    border: 1px solid #d8d4cc;
+    padding: 1rem;
+}
+
+.mhs-box h3 {
+    margin-top: 0;
+    border-bottom: 2px solid #f5f5f5;
+    padding-bottom: 0.5rem;
+}
+
+#list-mahasiswa {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#list-mahasiswa li {
+    padding: 8px 12px;
+    border-bottom: 1px solid #eee;
+    cursor: pointer;
+}
+
+#list-mahasiswa li:hover {
+    background-color: #ffe6e6;
+}
+
+#list-mahasiswa li.empty, #detail-mahasiswa .empty {
+    color: #888;
+    font-style: italic;
+    cursor: default;
 }
 
 main {
