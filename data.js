@@ -1,9 +1,10 @@
 // data.js
 const mahasiswa = [
-  { nama: "Anggoro", nilai: 80 },
-  { nama: "Andhika", nilai: 70 },
-  { nama: "Kholil", nilai: 90 },
-  { nama: "Dino", nilai: 60 },
-  { nama: "Faqih", nilai: 75 },
-  { nama: "Daffa", nilai: 50 }
+  { nama: "Muhammad Anggoro Wijaya", nilai: 80 },
+  { nama: "Andhika Wahyu Rizky", nilai: 70 },
+  { nama: "Muhammad Kholil Arsyad Ramadhan", nilai: 90 },
+  { nama: "Kaka Dino Riady", nilai: 60 },
+  { nama: "Muhammad Faqih Ali Ridho", nilai: 75 },
+  { nama: "Daffa Al Fariz", nilai: 50 },
+  { nama: "Tazkiya Latifatun Nadhiroh", nilai: 100 },
 ];
