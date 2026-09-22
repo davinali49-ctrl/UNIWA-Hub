@@ -1,0 +1,108 @@
+import React, { useState } from 'react';
+import './style.css'; // Pastikan style.css ada di folder yang sama
+
+export default function App() {
+  const [searchQuery, setSearchQuery] = useState('');
+
+  const handleSearchSubmit = (e) => {
+    e.preventDefault();
+  };
+
+  return (
+    <div>
+      <header>
+        <h1>Uniwa Hub</h1>
+      </header>
+
+      <nav>
+        <a href="#">Beranda</a>
+        <a href="#">Pengumuman</a>
+        <a href="#">Tentang</a>
+      </nav>
+
+      {/* Form Pencarian Mahasiswa */}
+      <form id="form-cari" onSubmit={handleSearchSubmit}>
+        <label htmlFor="q">Pencarian Mahasiswa:</label>
+        <input
+          id="q"
+          name="q"
+          type="search"
+          placeholder="Ketik nama mahasiswa..."
+          autoComplete="off"
+          value={searchQuery}
+          onChange={(e) => setSearchQuery(e.target.value)}
+        />
+      </form>
+
+      {/* Area Hasil Pencarian & Detail Mahasiswa */}
+      <div className="mhs-container">
+        <div className="mhs-box">
+          <h3>Hasil Pencarian</h3>
+          <ul id="list-mahasiswa">
+            <li className="empty">Ketik nama di kotak pencarian...</li>
+          </ul>
+        </div>
+
+        <div className="mhs-box">
+          <h3>Detail Mahasiswa</h3>
+          <div id="detail-mahasiswa">
+            <p className="empty">
+              Klik nama mahasiswa di sebelah kiri untuk melihat detail nilai.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <main>
+        <section id="daftar-pengumuman">
+          <article data-category="Kemahasiswaan">
+            <h2>Penerimaan Anggota Baru UKM SUFI</h2>
+            <p>
+              [Open Recruitment anggota UKM SUFI 2026] Hallo seluruh mahasiswa
+              UNIWA Kalian yang berjiwa muda, kalian yang ingin berkontribusi lebih
+              untuk UKM SUFI Kami memberikan kesempatan kepada teman-teman untuk
+              bergabung bersama kami dalam UKM SUFI.
+            </p>
+            <p>Alur Pendaftaran:</p>
+            <p>1. Follow akun instagram @pers_uniwa</p>
+            <p>2. Mengisi formulir pendaftaran dari Departemen PSDM BEM UNIWA</p>
+            <p>
+              <time dateTime="2026-09-17">17 September 2026</time> · Kemahasiswaan
+            </p>
+          </article>
+
+          <article data-category="Kegiatan">
+            <h2>Jum'at Sehat</h2>
+            <p>
+              Kegiatan Jum'at Sehat akan dilaksanakan pada Jumat pagi sebagai
+              kegiatan bersama untuk menjaga kebugaran dan meningkatkan semangat
+              mahasiswa dalam menjalani aktivitas.
+            </p>
+            <p>
+              <time dateTime="2026-09-11">11 September 2026</time> · kegiatan
+            </p>
+          </article>
+
+          <article data-category="Kegiatan">
+            <h2>
+              Pelaksanaan Mujahadah Syahriah Memperingati Maulid Nabi Muhammad SAW
+              1448 H
+            </h2>
+            <p>
+              Kegiatan Mujahadah Syahriah dalam rangka memperingati Maulid Nabi
+              Muhammad SAW 1448 H. Disponsori oleh Fakultas Teknik Universitas
+              Wahidiyah.
+            </p>
+            <p>
+              <time dateTime="2026-09-25">25 September 2026</time> · kegiatan
+            </p>
+          </article>
+        </section>
+      </main>
+
+      <footer>
+        <p>&copy; 2026 Uniwa Hub. Muhammad Davin Ali Fikri.</p>
+      </footer>
+    </div>
+  );
+}
