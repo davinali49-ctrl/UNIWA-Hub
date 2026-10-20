@@ -35,10 +35,18 @@ nav a {
     text-decoration:none;
     color: #0000ee;
     font-weight: 500;
+    padding: 0.5rem 0.75rem;
+    border-radius: 4px;
 }
 
 nav a:hover {
     text-decoration: underline;
+}
+
+nav a.active {
+    color: #fff;
+    background-color: #b30000;
+    text-decoration: none;
 }
 
 form label {
