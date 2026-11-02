@@ -87,7 +87,7 @@ export default function Beranda() {
             ) : hasilFilter.length === 0 ? (
               <li className="empty">Mahasiswa tidak ditemukan</li>
             ) : (
-              hasilFilter.map((mhs, index) => (
+              DATA_MAHASISWA.map((mhs, index) => (
                 <li key={index} onClick={() => setMhsTerpilih(mhs)}>
                   {mhs.nama}
                 </li>

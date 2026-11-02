@@ -11,7 +11,7 @@ export default function Berita() {
                 setStatus('memuat');
                 setError("");
 
-                const response = await fetch("https://jsonplaceholder.typicode.com/posts");
+                const response = await fetch("https://jsonplaceholder.typicode.com/post");
 
                 if (!response.ok) {
                     throw new Error('Gagal memuat berita.');
