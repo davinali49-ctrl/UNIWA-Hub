@@ -118,7 +118,7 @@ export default function Beranda() {
       </div>
 
         <section id="daftar-pengumuman">
-          {DATA_PENGUMUMAN.map((item) => (
+          {PENGUMUMAN.map((item) => (
             <article key={item.id} data-category={item.kategori}>
               <h2>{item.judul}</h2>
               <p>{item.isi}</p>
