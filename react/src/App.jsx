@@ -21,7 +21,7 @@ export default function App() {
 
       <Routes>
         <Route path="/" element={<Beranda />} />
-        <Route path="/beritas" element={<Berita />} />
+        <Route path="/berita" element={<Berita />} />
         <Route
           path="*"
           element={
