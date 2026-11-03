@@ -84,8 +84,6 @@ export default function Beranda() {
           <ul id="list-mahasiswa">
             {keyword.trim() === '' ? (
               <li className="empty">Ketik nama di kotak pencarian...</li>
-            ) : hasilFilter.length === 0 ? (
-              <li className="empty">Mahasiswa tidak ditemukan</li>
             ) : (
               DATA_MAHASISWA.map((mhs, index) => (
                 <li key={index} onClick={() => setMhsTerpilih(mhs)}>
@@ -118,7 +116,7 @@ export default function Beranda() {
       </div>
 
         <section id="daftar-pengumuman">
-          {PENGUMUMAN.map((item) => (
+          {DATA_PENGUMUMAN.map((item) => (
             <article key={item.id} data-category={item.kategori}>
               <h2>{item.judul}</h2>
               <p>{item.isi}</p>
