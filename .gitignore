@@ -2,6 +2,5 @@
 node_modules/
 **/node_modules/
 **/dist/
-backup/
 .env
 **/.env

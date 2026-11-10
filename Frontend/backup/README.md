@@ -1,0 +1,3 @@
+NAMA                : Muhamad Davin Ali Fikri
+NIM                 : 20252210176
+Penjelasan singkat  : UNIWA Hub adalah sebuah laman web sederhana yang berisi informasi dan pengumuman mengenai kegiatan dan agenda Universitas Wahidiyah. Halaman ini menggunakan HTML dan CSS untuk menampilkan beberapa informasi kegiatan kampus. Halaman juga dilengkapi dengan navigasi, form pencarian, serta footer yang memuat identitas pembuat.
