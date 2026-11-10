@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Test Form Input</title>
+</head>
+<body>
+  <h2>Form Tambah User</h2>
+  <form id="userForm">
+    <input type="text" id="nama" placeholder="Masukkan Nama" required><br><br>
+    <input type="email" id="email" placeholder="Masukkan Email" required><br><br>
+    <button type="submit">Submit Data</button>
+  </form>
+
+  <p id="status"></p>
+
+  <script>
+    const form = document.getElementById('userForm');
+    
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      const nama = document.getElementById('nama').value;
+      const email = document.getElementById('email').value;
+
+      try {
+        const response = await fetch('http://localhost:5000/api/users', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({ nama, email })
+        });
+
+        const result = await response.json();
+        
+        if (response.ok) {
+          document.getElementById('status').innerText = '✅ ' + result.message;
+          form.reset();
+        } else {
+          document.getElementById('status').innerText = '❌ Gagal: ' + result.message;
+        }
+      } catch (err) {
+        document.getElementById('status').innerText = '❌ Error menyambung ke server';
+      }
+    });
+  </script>
+</body>
+</html>
