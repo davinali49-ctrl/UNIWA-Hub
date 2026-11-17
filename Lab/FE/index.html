@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Halaman Login</title>
+    </head>
+
+    <body>
+
+        <h1>Login User</h1>
+
+        <div id="box-login">
+            <form id="form-login">
+                <input type="text" id="username">
+                <input type="password" id="password">
+                <button type="submit">Login</button>
+                <p id="pesan"></p>
+            </form>
+        </div>
+
+        <div id="box-logout" style="display: none;">
+            <h2>Selamat datang!</h2>
+            <button id="btn-logout">Logout </button>
+        </div>
+
+        <script>
+            const formLogin = document.getElementById('form-login');
+            const boxLogin = document.getElementById('box-login');
+            const boxLogout = document.getElementById('box-logout');
+            const pesan = document.getElementById('pesan');
+            const btnLogout = document.getElementById('btn-logout');
+            const API_URL = `http://${window.location.hostname || '127.0.0.1'}:3000`;
+
+            formLogin.addEventListener('submit', async (e) => {
+                e.preventDefault();
+
+                const username = document.getElementById('username').value;
+                const password = document.getElementById('password').value;
+
+                try {
+                    const response = await fetch(`${API_URL}/login`, {
+                        method: 'POST',
+                        credentials: 'include',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({ username, password })
+                    });
+
+                    const result = await response.json();
+
+                    if (response.ok) {
+                        pesan.innerText = '✅ ' + result.message;
+                        alert('Login berhasil!'); // Menampilkan alert saat login berhasil
+                        boxLogin.style.display = 'none';
+                        boxLogout.style.display = 'block';
+                    } else {
+                        pesan.innerText = '❌ Gagal: ' + result.message;
+                    }
+                } catch (err) {
+                    pesan.innerText = '❌ Error menyambung ke server';
+                }
+            });
+
+            btnLogout.addEventListener('click', async () => {
+                await fetch(`${API_URL}/logout`, {
+                    method: 'POST',
+                    credentials: 'include'
+                });
+                boxLogin.style.display = 'block';
+                boxLogout.style.display = 'none';
+                pesan.innerText = '';
+            });
+
+            async function checkLoginStatus() {
+                try {
+                    const response = await fetch(`${API_URL}/status`, {
+                        method: 'GET',
+                        credentials: 'include'
+                    });
+
+                    const result = await response.json();
+
+                    if (response.ok && result.loggedIn) {
+                        boxLogin.style.display = 'none';
+                        boxLogout.style.display = 'block';
+                    } else {
+                        boxLogin.style.display = 'block';
+                        boxLogout.style.display = 'none';
+                    }
+                } catch (err) {
+                    pesan.innerText = '❌ Error menyambung ke server';
+                }
+            }
+            checkLoginStatus();
+        </script>
+    </body>
+
+
+
+
+
+
+
+
+
+</html>
