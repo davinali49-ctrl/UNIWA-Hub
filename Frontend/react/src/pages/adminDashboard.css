@@ -1,0 +1,186 @@
+.admin-page {
+    min-height: 75vh;
+    padding: 35px;
+    background-color: #f4f6fb;
+}
+
+.admin-heading {
+    margin-bottom: 25px;
+}
+
+.admin-heading h1 {
+    color: #872323;
+    margin-bottom: 8px;
+}
+
+.admin-heading p {
+    color: #777;
+}
+
+.admin-summary {
+    margin-bottom: 25px;
+}
+
+.summary-card {
+    background: white;
+    padding: 22px;
+    border-radius: 12px;
+    max-width: 250px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.summary-card span {
+    color: #777;
+    font-size: 14px;
+}
+
+.summary-card h2 {
+    color: #872323;
+    font-size: 30px;
+    margin-top: 8px;
+}
+
+.admin-content {
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    gap: 25px;
+    align-items: start;
+}
+
+.admin-form-card,
+.admin-table-card {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.admin-form-card h2,
+.admin-table-card h2 {
+    font-size: 19px;
+    margin-bottom: 22px;
+    color: #872323;
+}
+
+.admin-form-card .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 18px;
+}
+
+.admin-form-card label {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.admin-form-card input {
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 7px;
+    outline: none;
+}
+
+.admin-form-card input:focus {
+    border-color: #872323;
+}
+
+.admin-form-card button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 7px;
+    background-color: #872323;
+    color: white;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.admin-form-card .cancel-button {
+    margin-top: 10px;
+    background-color: #777;
+}
+
+.table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.admin-table-card table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.admin-table-card th,
+.admin-table-card td {
+    padding: 13px;
+    border-bottom: 1px solid #eee;
+    font-size: 14px;
+}
+
+.admin-table-card th {
+    background-color: #f4f6fb;
+    color: #872323;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 7px;
+}
+
+.action-buttons button {
+    padding: 7px 10px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+}
+
+.edit-button {
+    background-color: #d99b24;
+}
+
+.delete-button {
+    background-color: #d94b4b;
+}
+
+@media (max-width: 900px) {
+    .admin-content {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    .admin-page {
+        padding: 20px 12px;
+    }
+
+    .admin-form-card,
+    .admin-table-card {
+        padding: 18px;
+    }
+}
+
+.admin-error {
+    color: #d94b4b;
+    background-color: #fff0f0;
+    padding: 10px;
+    border-radius: 6px;
+    font-size: 13px;
+    margin-bottom: 15px;
+}
+
+.admin-success {
+    color: #16834a;
+    background-color: #edfff4;
+    padding: 10px;
+    border-radius: 6px;
+    font-size: 13px;
+    margin-bottom: 15px;
+}
+
+.admin-form-card button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}

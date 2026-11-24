@@ -1,0 +1,115 @@
+.mahasiswa-page {
+    min-height: 75vh;
+    padding: 35px;
+    background-color: #f4f6fb;
+}
+
+.mahasiswa-welcome {
+    padding: 30px;
+    background-color: #872323;
+    color: white;
+    border-radius: 14px;
+    margin-bottom: 25px;
+}
+
+.mahasiswa-welcome span {
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+.mahasiswa-welcome h1 {
+    font-size: 27px;
+    margin: 12px 0;
+}
+
+.mahasiswa-welcome p {
+    font-size: 14px;
+    opacity: 0.85;
+}
+
+.mahasiswa-profile {
+    padding: 28px;
+    background-color: white;
+    border-radius: 14px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.profile-heading {
+    margin-bottom: 25px;
+}
+
+.profile-heading h2 {
+    color: #872323;
+    margin-bottom: 8px;
+}
+
+.profile-heading span {
+    color: #777;
+    font-size: 14px;
+}
+
+.profile-info {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.profile-item {
+    padding: 18px;
+    background-color: #f4f6fb;
+    border-radius: 9px;
+}
+
+.profile-item span {
+    display: block;
+    color: #777;
+    font-size: 13px;
+    margin-bottom: 8px;
+}
+
+.profile-item h3 {
+    font-size: 16px;
+    color: #333;
+}
+
+@media (max-width: 600px) {
+    .mahasiswa-page {
+        padding: 20px 12px;
+    }
+
+    .mahasiswa-welcome {
+        padding: 22px;
+    }
+
+    .mahasiswa-welcome h1 {
+        font-size: 22px;
+    }
+
+    .profile-info {
+        grid-template-columns: 1fr;
+    }
+
+    .mahasiswa-profile {
+        padding: 20px;
+    }
+}
+
+.mahasiswa-logout {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: white;
+    color: #872323;
+    border: none;
+    border-radius: 7px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.mahasiswa-logout:hover {
+    background-color: #e8edf7;
+}
+
+.dashboard-error {
+    color: #d94b4b;
+    margin-bottom: 15px;
+}
